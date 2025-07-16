@@ -1,8 +1,9 @@
-// StoreLetter.cs (파일 이름과 클래스 이름이 일치해야 합니다)
-using Firebase.Firestore; // 이 네임스페이스를 추가합니다.
+// StoreLetter.cs
+using Firebase.Firestore;
+using System;
 
     [FirestoreData]
-    public class StoreLetter // 클래스 이름이 SerializedLetter로 변경됨
+    public class StoreLetter
     {
 
         [FirestoreProperty]
@@ -12,12 +13,13 @@ using Firebase.Firestore; // 이 네임스페이스를 추가합니다.
         public string Content { get; set; }
 
         [FirestoreProperty]
-        public string Timestamp { get; set; }
+        public Timestamp Timestamp { get; set; }
 
-        public StoreLetter() { } // 기본 생성자도 SerializedLetter로 변경
+        public StoreLetter() { }
 
-        public StoreLetter(string content, string timestamp)
+        public StoreLetter(string senderID, string content, Timestamp timestamp)
         {
+            SenderID = senderID;    
             Content = content;
             Timestamp = timestamp;
         }

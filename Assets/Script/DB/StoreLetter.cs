@@ -4,6 +4,10 @@ using Firebase.Firestore; // 이 네임스페이스를 추가합니다.
     [FirestoreData]
     public class StoreLetter // 클래스 이름이 SerializedLetter로 변경됨
     {
+
+        [FirestoreProperty]
+        public string SenderID { get; set; }
+
         [FirestoreProperty]
         public string Content { get; set; }
 

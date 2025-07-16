@@ -34,21 +34,28 @@ public class FirebaseFirestoreDatabase : MonoBehaviour
         }
     }
 
-    // 편지 추가 (Create)
-    public async void AddLetter(string content)
+    // 편지 추가 (Add)
+    public async void AddLetter(string content, string senderID)
     {
-        StoreLetter newLetter = new()
+        // 1. 저장할 데이터 객체 생성
+        StoreLetter newLetter = new StoreLetter
         {
             Content = content,
-            Timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            Timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+            SenderID = senderID,
         };
 
-        await lettersCollection.AddAsync(newLetter)
+        // 2. 문서 ID를 결정합니다. 여기서는 senderID을 ID로 사용합니다.
+        //    만약 senderID가 비어있거나 고유하지 않다면 문제가 될 수 있으니 주의해야 합니다.
+        string documentId = $"{senderID}_{System.DateTime.Now.ToString("yyyyMMdd_HHmmssfff")}";
+
+        // 3. Document() 메서드로 원하는 ID를 가진 문서 참조를 얻은 후, SetAsync()로 데이터를 저장합니다.
+        await lettersCollection.Document(documentId).SetAsync(newLetter)
             .ContinueWithOnMainThread(task =>
             {
                 if (task.IsCompletedSuccessfully)
                 {
-                    Debug.Log("Firestore에 편지 추가 성공!");
+                    Debug.Log($"Firestore에 편지 추가 성공! 문서 ID: {documentId}");
                     loadedLetters.Add(newLetter);
                 }
                 else

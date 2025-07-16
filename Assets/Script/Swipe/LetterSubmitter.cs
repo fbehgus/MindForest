@@ -10,6 +10,7 @@ public class LetterSubmitter : MonoBehaviour
     public void SubmitLetter()
     {
         string content = inputField.text;
+        string senderID = "senderID";
 
         if (string.IsNullOrWhiteSpace(content))
         {
@@ -21,7 +22,7 @@ public class LetterSubmitter : MonoBehaviour
 
         // Firebase Firestore에 편지 추가
         // AddLetter 메서드는 비동기(async void) 이므로, 바로 실행하고 기다리지 않습니다.
-        firebaseDB.AddLetter(content);
+        firebaseDB.AddLetter(content, senderID);
 
         // 편지 제출이 성공하면 나무 성장을 증가시키고 싶다면,
         // AddLetter 내부에서 Firestore에 데이터가 성공적으로 추가된 후

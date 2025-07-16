@@ -1,3 +1,3 @@
 Unity 프로젝트를 업로드하는데에 있어서 Library, Obj, Package 폴더는 100mb 이상의 파일을 포함해서 업로드하지 않음.
-Setting 관련 문제로 git clone하고 실행 시 Scene이 보이지 않는 문제가 있는데 상단 바에서 File>Open Scene에서 Assets/workfile/mainScene.unity 선택하면 됨.
+Setting 관련 문제로 git clone하고 실행 시 Scene이 보이지 않는 문제가 있는데 상단 바에서 File>Open Scene에서 Assets/workfile/Scenes/mainScene.unity 선택하면 됨.
 Platform 다를 시 File>Build Settings에서 Android로 변경하면 Game 상에서의 화면 비율을 고칠 수 있음.

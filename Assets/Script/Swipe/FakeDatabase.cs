@@ -14,7 +14,7 @@ public class FakeDatabase : MonoBehaviour {
     }
 
     public void AddLetter(string content) {
-        data.letters.Add(new Letter
+        data.letters.Add(new SerializedLetter
         {
             content = content,
             timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
@@ -25,7 +25,7 @@ public class FakeDatabase : MonoBehaviour {
     public void Save() {
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(filePath, json);
-        Debug.Log("ÆíÁö°¡ ÀúÀåµÇ¾ú½À´Ï´Ù! ¡æ " + filePath);
+        Debug.Log("í¸ì§€ê°€ ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤! â†’ " + filePath);
     }
 
     public void Load() {

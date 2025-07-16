@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "899837687886",
+    "project_id": "mindforest-53332",
+    "storage_bucket": "mindforest-53332.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899837687886:android:a6601d2b71c1ed054deb1f",
+        "android_client_info": {
+          "package_name": "com.indecisiveness.com.unity.template.mobile2D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA57xxINDQ3rdOLEde0FXroKwlMSUDiZOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:899837687886:android:fe1e867daeced16f4deb1f",
+        "android_client_info": {
+          "package_name": "com.indecisiveness.mindforest"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA57xxINDQ3rdOLEde0FXroKwlMSUDiZOQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
